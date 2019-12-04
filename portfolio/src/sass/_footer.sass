@@ -1,0 +1,33 @@
+.footer   
+    .contacts
+        &__list_fixed    
+            position: fixed
+            top: 50%
+            transform: translateY(-50%)
+            left: 0
+            list-style-type: none
+            padding: 0 0 0 10px
+        &__item_fixed
+            width: 45px
+            height: 45px
+            background-color: transparent
+            border-radius: 50%
+            margin-top: 2px
+            transition: .3s all
+            &:hover
+                background-color: $darkColor                
+            i
+                font-size: 24px
+                color: #000000
+                transform: translate(50%, 40%)                
+
+    .copyright
+        font-size: 24px
+        text-align: right
+        padding: 0px 100px 100px 0
+        cursor: pointer
+        transition: .7s all
+        &:hover
+            text-shadow: 1px 1px 1px #000
+
+            

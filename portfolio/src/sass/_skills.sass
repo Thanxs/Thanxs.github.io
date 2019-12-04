@@ -1,0 +1,87 @@
+.skills    
+    background-image: linear-gradient(to bottom, #ffffff, #f9feff, #edffff, #e3fffd, #e4ffec)
+    padding: 70px 0 250px 0
+    &__main-list
+        list-style-type: none        
+        padding: 0
+        margin-top: 50px
+        display: flex
+        flex-wrap: wrap
+        justify-content: center
+    &__item        
+        margin: 10px 15px
+        width: 250px
+    &__icon
+        width: 200px
+        height: 200px
+        margin: 0 auto
+        border: 5px solid transparent    
+        border-radius: 50%        
+        transition: .4s all 
+        a
+            display: block
+            &:hover
+                text-decoration: none
+            i
+                font-size: 140px
+                color: #2a2929
+                display: block
+                margin: 0 auto
+                transform: translate(22%, 20%)
+
+            .fa-js-square
+                transform: translate(18%, 20%)
+
+    &__description
+        width: 100%
+        text-align: center
+        margin: 0 auto
+        margin-top: 15px
+        font-size: 16px
+
+    &__additional-list
+        list-style-type: none
+        display: flex
+        justify-content: center
+        flex-wrap: wrap
+        padding: 0
+        margin-top: 50px
+        .skills__item
+            margin: 30px 0 0 0
+            width: 250px
+        .skills__icon
+            width: 150px
+            height: 150px
+            i
+                font-size: 100px
+                transform: translate(8%, 15%)
+            .fa-gulp
+                transform: translate(30%, 15%)
+            .fa-adobe, .fa-git
+                transform: translate(15%, 15%)
+            .fa-bootstrap
+                transform: translate(19%, 20%)
+
+    &__advanced-list
+        list-style-type: none
+        display: flex
+        justify-content: center
+        flex-wrap: wrap
+        padding: 0
+        margin-top: 50px
+        .skills__item
+            margin: 30px 0 0 0
+            width: 250px
+        .skills__icon
+            width: 200px
+            height: 200px            
+            .fa-react
+                transform: translate(15%, 15%)
+            .fa-node
+                transform: translate(4%, 20%)
+
+    &__icon
+        &:hover
+            transform: scale(1.17)
+            border: 5px solid $darkColor
+

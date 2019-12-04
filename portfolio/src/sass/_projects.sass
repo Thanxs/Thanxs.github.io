@@ -1,0 +1,40 @@
+.projects
+    background: $darkColor
+    width: 100%
+    min-height: 1000px
+    padding: 70px 0 150px 0px
+    transform: skewY(-3deg) translateY(-100px)
+    &__title        
+        color: $lightColor
+        transform: skewY(3deg) translateY(100px)
+    &__list
+        list-style-type: none
+        padding: 0
+        margin: 50px 0 0 0
+        display: flex
+        flex-wrap: wrap
+        justify-content: space-between
+        transform: skewY(3deg) translateY(100px)
+    &__item
+        position: relative
+        width: 510px
+        height: 340px
+        margin-top: 50px
+        border: 6px solid#000000
+        border-radius: 10px
+        box-sizing: border-box
+        overflow: hidden    
+    &__image           
+        width: 100%
+        height: 100%            
+        transform: scale(1.28)  
+        opacity: .2
+        transition: .3s all
+        cursor: pointer
+        &:hover
+            transform: scale(1)
+            opacity: 1
+    .uber
+        background: url('../images/projects/uber.jpg') (center / cover) no-repeat
+    .run-smart
+        background: url('../images/projects/runSmart.jpg') (center / cover) no-repeat

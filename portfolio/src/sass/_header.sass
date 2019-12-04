@@ -1,0 +1,75 @@
+.header
+    width: 99%
+    &__left
+        position: relative      
+        background: url('../images/bg/main_photo.jpg') (center / cover) no-repeat     
+
+    &__right
+        min-height: 120vh
+        background-color: $darkColor
+
+    &__name
+        margin: 20px 0 0 0
+        padding-left: 60px
+        color: $lightColor
+        font-weight: 300                
+        cursor: pointer
+        transition: .3s all
+        &:hover
+            text-shadow: 1px 1px 1px $lightColor
+   
+    &__list
+        display: flex
+        justify-content: space-between
+        margin: 0
+        padding: 30px 60px
+        list-style-type: none    
+
+    &__item
+        position: relative
+        -webkit-transition: .2s ease-in-out
+        -moz--transition: .2s ease-in-out
+        transition: .2s ease-in-out
+        &:hover
+            transform: scale(1.4)
+        &:after
+            background-color: $lightColor
+            display: block
+            content: ""
+            height: 3px
+            width: 0%
+            left: 50%
+            position: absolute
+            -webkit-transition: width .4s ease-in-out
+            -moz--transition: width .4s ease-in-out
+            transition: width .4s ease-in-out
+            -webkit-transform: translateX(-50%)
+            -moz-transform: translateX(-50%)
+            transform: translateX(-50%)
+        &:hover:after,
+        &:focus:after 
+            width: 100% 
+
+    &__link
+        color: #ffffff
+        text-decoration: none
+        font-size: 20px    
+        &:hover
+            color: $lightColor
+            text-decoration: none
+
+    &__description
+        margin: 100px 0 0 130px
+
+        &__title
+            color: $lightColor
+            font-size: 32px
+
+        &__name
+            color: #fff
+            font-size: 56px
+
+        &__info            
+            font-size: 16px
+            color: #fff
+            padding-right: 70px

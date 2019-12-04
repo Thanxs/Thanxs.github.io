@@ -1,0 +1,230 @@
+#wrapper {
+    padding-top: 20px; 
+}
+
+.entities {
+    display: flex;
+    justify-content: center;
+}
+
+.entities div {
+    font-size: 24px;
+    padding: 10px;
+    margin: 5px 8px 0 8px;
+    cursor: pointer;
+    width: 150px;
+    border-radius: 10px;
+    text-align: center;
+    transform: skew(-6deg);
+    transition: .8s all;
+}
+
+.entities div:hover {
+    background-color: #f89406;    
+    color: #000000;
+    transform: scale(1.14) skew(-10deg);
+}
+
+.entity__list {
+    list-style-type: none;
+    margin: 0 auto;    
+    width: 90%;
+    padding: 20px;
+    transition: .8s all;    
+}
+
+.entity__item {
+    font-size: 24px;    
+    cursor: pointer;
+    text-indent: 10px;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0 10px 0;
+    transition: .8s all;
+}
+
+.entity__item:hover {
+    background-color: #f89406;
+    border-radius: 10px;
+    color: #000000;      
+}
+
+.view, .edit, .remove {
+    text-transform: uppercase;
+}
+
+.btn-block {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.wrapper-info {
+    position: relative;
+    transition: 3s all;
+}
+
+.info, .info-cars, .purchase-info, .sale-info {
+    width: 40%;
+    min-height: 400px;    
+    margin: 5px auto;
+    margin-bottom: 0;
+    padding: 20px 0 20px 0;
+    border-radius: 10px;
+    transition: 1.6s all;
+}
+
+.info {
+    transition: 1s all;
+}
+
+.info-cars {
+    position: absolute;
+    width: 45%;
+    right: 60px;
+    top: -3px;
+    overflow: hidden;
+}
+
+.form-group input {    
+    width: 70%;
+    margin: 0 auto;
+    color: #000000;    
+}
+
+.btn {
+    margin-right: 15px;
+    transition: .8s all;
+}
+
+.confirm, .btn-add, .confirm-adding, .btn-buy-confirm, .btn-sale-confirm, .btn-deposit, .btn-make-deposit {
+    display: block;
+    margin: 0 auto;    
+    margin-top: 20px;
+    text-transform: uppercase;
+}
+
+.btn-buy-confirm, .btn-sale-confirm {
+    margin-bottom: 20px;
+}
+
+.delete-confirmation {
+    width: 50%;
+    min-height: 150px;
+    margin: 50px auto;
+    padding: 20px 0 0 0;
+    border: 2px solid #a0a0a0;
+    border-radius: 10px;
+    font-size: 22px;
+    text-align: center;
+}
+
+.error {
+    color: #df0000;
+    font-size: 20px;
+    text-align: center;
+    padding: 0 20px 0 20px;
+}
+
+.block-btns-deals {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;      
+}
+
+.btn-buy, .btn-sale {
+    display: block;
+    margin: 0 7px 0 7px;    
+    margin-bottom: 10px;
+    text-transform: uppercase;    
+}
+
+.btn-deal-cancel {
+    display: block;
+    margin: 30px auto;
+    width: 30%;
+    text-transform: uppercase;
+}
+
+.notification-missing {
+    color: #5bc0de;
+    text-shadow: 3px 3px 3px #52acff;
+    margin-top: 100px;
+    padding: 0 20px 0 20px;
+    font-size: 28px;
+    text-align: center;
+}
+
+.select-for-deal {
+    overflow: hidden;
+    outline: none;
+    border: none;
+    width: 120%;
+    background-color: #272B30;  
+}
+
+.car-option {    
+    height: 50px;
+    padding: 0 0px 0 70px;
+    font-size: 24px;    
+    color: #fff;
+    cursor: pointer;   
+    transition: .8s all;  
+}
+
+.car-option:hover { 
+    transform: translateX(-35px);
+}
+
+.purchase-confirmation, .sale-confirmation {
+    width: 100%;
+    padding: 0 20px 0 20px;
+    font-size: 20px;
+    color: #5bc0de;
+    margin-bottom: 30px;
+}
+
+.purchase-confirmation b, .sale-confirmation b {
+    color: #49edff;
+    font-size: 22px;    
+}
+
+.buy-buttons-block, .sale-buttons-block {
+    display: flex;
+    justify-content: center;
+}
+
+.btn-buy-accept, .btn-buy-decline, .btn-sale-accept, .btn-sale-decline {
+    text-transform: uppercase;    
+    width: 45%;
+    color: #000000;
+    margin-left: 15px;
+}
+
+.purchase-congratulation, .sale-congratulation, .deposit-notification {
+    color: #5bc0de;
+    text-shadow: 1px 1px 2px #8fc7ff;
+    font-size: 20px;
+    margin-top: 30px;
+    padding: 0 20px 0 20px;
+}
+
+.purchase-failure {
+    color: #df0000;
+    text-shadow: 1px 1px 2px #ff5151;
+    font-size: 20px;
+    margin-top: 30px;
+    padding: 0 20px 0 20px;
+}
+
+.deposit-notification {
+    text-align: center;
+}
+
+#deposit-form {
+    margin-top: 20px;
+    padding: 0 20px 0 20px;
+}
+
+.text-muted {
+    text-align: center;
+}
