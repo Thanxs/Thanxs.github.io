@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div id="wrapper">
+        <div class="container">
+            <div class="d-flex">
+                <button type="button" class="btn btn-success btn__one" data-toggle="modal" data-target="#myModal" data-tooltip="tooltip" data-placement="left" data-html="true" title="<em>Press this button to open modal window</em>">Open modal
+                </button>
+                <button type="button" class="btn btn-info btn__two" data-tooltip="tooltip" data-placement="right" data-html="true" title="<em>This button hides and shows alert message</em>">Toggle alert</button>
+                <div id="myModal" class="modal fade" tabindex="-1">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h3 class="modal-title" id="exampleModalLabel">Live text editor</h3>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true" class="span-close">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <form>
+                                    <div class="form-group">
+                                            <label for="text" class="col-form-label">Message:</label>
+                                             <textarea class="form-control" id="text">some text...</textarea>
+                                        </div>
+                                </form>
+                            <div class="edit-text">some text...                         
+                            </div>
+                            </div>
+                            <div class="modal-footer">                        
+                                <button type="button" class="btn btn-dark" data-dismiss="modal">Close</button>                        
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="alert alert-success" role="alert">
+                <h4 class="alert-heading">Well done!</h4>
+                <p>Aww yeah!!! This is Alex Nikolskyi and his personal alert! To hide this alert, press the button <strong>Toggle alert</strong>. To show it again, press the button again!
+                <hr>
+                <p class="mb-0">If you want to see my other applications, check my portfolio on GitHub!</p>
+            </div>
+            <div class="my-info">I am Alex Nikolskyi and I was born on <br> <strong id="myBirthday"></strong>.</div>           
+        </div>
+        <div class="guest-info">
+            <div class="guest-text">Dear guest, press button to share your date of birth with me and after that I will convert the date to a different format</div>
+            <button class="btn btn-outline-info btn__three" data-toggle="modal" data-target="#modalForGuest">Press this button!</button>
+            <div id="modalForGuest" class="modal fade" tabindex="-1">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h3 class="modal-title" id="exampleModalLabel">Date converter</h3>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true" class="span-close">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <form>
+                                <div class="form-group">
+                                    <div class="date-converter__description">Enter your date of birth and press <strong>Generate</strong>.</div>
+                                    <label for="guestDate" class="col-form-label">Enter your date:</label>
+                                    <input type="text" class="form-control" id="guestDate">
+                                </div>
+                            </form>
+                        <div class="guest-edit-text"></div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-info generate">Generate</button>                         
+                            <button type="button" class="btn btn-dark" data-dismiss="modal">Close</button>                      
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>    
+    <script src="js/jquery.min.js"></script>
+    <script src="js/popper.min.js"></script>    
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/moment.min.js"></script>
+    <script src="js/index.js"></script>
+</body>
+</html>

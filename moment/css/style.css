@@ -1,0 +1,96 @@
+#wrapper {    
+    padding-top: 2rem;
+    height: 100vh;
+    background-image: radial-gradient(circle, #ffffff, #f6fdff, #e4ffff, #d4fffd, #d4ffe6);
+}
+
+.d-flex {
+    justify-content: center;
+}
+
+.btn__one, .btn__two, .btn__three {
+    margin: .5rem;
+}
+
+.btn__one a:hover {
+    text-decoration: none;
+    color: #fff;
+}
+
+.modal-title {
+    color: #155724;
+}
+
+label {
+    font-size: 1.2rem;
+    color: #155724;
+}
+
+.edit-text, .guest-edit-text {
+    margin-top: 1rem;
+    min-height: 3rem;
+    padding-left: .5rem;
+    font-size: 1.5rem;
+    color: #155724;
+    text-shadow: 1px 1px 2px #3ec15c;
+    overflow: auto;
+}
+
+.alert {
+    margin-top: 2rem;
+}
+
+.my-info {
+    width: 33%;
+    border: 1px dashed #ccc;
+    border-radius: .5rem;
+    padding: 1rem;
+    margin: 0 auto;
+    margin-top: 2rem;
+    background-color: #dbfbc4;
+    color: #155724;
+    font-size: 1.3rem;
+    text-shadow: 1px 1px 2px #3ec15c;
+    text-align: center;
+}
+
+#myBirthday {
+    font-size: 1.3rem;
+}
+
+.guest-info {
+    margin: 0 auto;
+    margin-top: 1rem;
+    padding: 1rem;
+    border: 1px dashed #ccc;
+    border-radius: .5rem;
+    width: 50%;
+    min-height: 5rem;
+    display: flex;
+    justify-content: center;
+    color: #155724;
+    font-size: 1.1rem;
+    text-shadow: 1px 1px 2px #3ec15c;
+}
+
+.guest-text {
+    margin-right: 2rem;
+}
+
+.date-converter__description {
+    font-size: 0.9rem;
+    font-style: italic;
+    text-shadow: none;
+}
+
+.date-converter__description strong {
+    color: #17a2b8;
+    text-shadow: 1px 1px 1px #a8dfe7;
+    font-style: normal;
+    font-size: 1rem;
+}
+
+.span-close {
+    color: #3ec15c;
+    font-size: 2.5rem;
+}
