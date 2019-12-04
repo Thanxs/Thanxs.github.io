@@ -17,5 +17,5 @@ function handleClickOnBtnTwo() {
 
 function handleClickOnBtnGenerate() {    
     value = $('#guestDate').val();
-    $('.guest-edit-text').text(moment(value).format('D MMMM YYYY'));
+    $('.guest-edit-text').text(moment(value, 'D/M/YYYY').format('D MMMM YYYY'));
 }
