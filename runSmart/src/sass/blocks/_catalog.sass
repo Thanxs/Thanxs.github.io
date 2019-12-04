@@ -1,0 +1,148 @@
+.catalog
+    padding-bottom: 100px
+    &__tabs
+        margin-top: 70px
+        list-style: none
+        display: flex
+        justify-content: center
+        align-items: center
+        margin-bottom: 0
+        padding-left: 0
+    &__tab
+        width: 220px
+        height: 50px        
+        color: #6b6b6b
+        border: 2px solid #d0d0d0
+        font-size: 18px
+        line-height: 48px
+        font-weight: 500
+        text-transform: uppercase
+        text-align: center
+        cursor: pointer
+        transition: 0.5s all
+        &:hover
+            box-shadow: 3px 3px 20px
+            border: none
+        margin: 0 5px
+        transform: skewX(-25deg)
+        div
+            transform: skewX(25deg)
+        &_active
+            color: #fff
+            background-color: $mainColor
+            border: none
+    &__content
+        margin-top: 60px
+        display: none
+        justify-content: space-between
+        flex-wrap: wrap
+        &_active
+            display: flex
+    &-item
+        width: 300px
+        min-height: 440px
+        border: 2px solid #e8e8e8
+        padding: 20px 20px 26px 20px
+        margin-bottom: 20px
+        overflow: hidden
+        &__img
+            display: block
+            margin: 0 auto
+            max-width: 100%
+            height: 200px
+        &__subtitle
+            margin-top: 20px
+            color: #0d0d0d            
+            font-size: 16px
+            font-weight: 700
+            text-align: center
+        &__descr
+            color: #0d0d0d            
+            font-size: 14px
+            font-weight: 300
+            text-align: center
+        &__link
+            margin-top: 17px
+            display: block
+            color: $mainColor
+            font-size: 14px
+            font-weight: 500
+            text-decoration: underline
+            text-align: center
+            text-transform: uppercase
+            &:hover
+                color: $mainColor
+        hr
+            margin-top: 19px
+            margin-bottom: 21px
+            color:#e8e8e8
+            border-bottom: none
+        &__footer
+            display: flex
+            justify-content: space-between
+            align-items: center
+        &__old-price
+            color: #555555       
+            font-size: 14px
+            font-weight: 300
+            text-decoration: line-through
+        &__new-price
+            color: #050505            
+            font-size: 20px
+            font-weight: 700
+        &__wrapper
+            display: flex
+            width: calc(200% + 40px)
+        &__content
+            width: 50%
+            min-height: 380px
+            margin-right: 0px
+            transform: translateX(-100%)
+            transition: 0.5s all
+            &_active
+                transform: translateX(0%)
+                margin-right: 20px
+
+        &__list
+            position: relative
+            width: 50%
+            min-height: 380px
+            margin-left: 20px
+            padding-left: 19px
+            padding-right: 20px
+            margin-bottom: 0
+            list-style: none
+            transform: translateX(0%)            
+            transition: 0.5s all
+            &_active
+                transform: translateX(-100%)
+                margin-left: 0px
+            li
+                position: relative
+                color: #555555
+                font-size: 14px
+                font-weight: 300
+                margin-bottom: 20px
+                &:before
+                    content: ''
+                    position: absolute
+                    width: 5px
+                    height: 5px
+                    background-color: $mainColor
+                    left: -14px
+                    top: 7px
+        &_back
+             margin-top: 17px
+             display: block
+             color: $mainColor
+             font-size: 14px
+             font-weight: 500
+             text-decoration: underline
+             text-align: center
+             text-transform: uppercase
+             &:hover
+                 color: $mainColor
+                    
+                
+
+        
