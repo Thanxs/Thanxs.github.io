@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">   
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="css/style.css">
+    <title>GitHub Finder</title>
+</head>
+<body>
+    <div id="wrapper">
+        <header class="header">
+            <div class="container">
+                <h1 class="header__title">GitHub Finder</h1>
+                <form name="searchForm">
+                    <div class="form-group header__search">                       
+                        <input type="search" class="form-control search-input" name="searchInput" placeholder="Search repository from GitHub">
+                        <button type="submit" class="btn btn-dark btn-search"><i class="fa fa-search"></i></button>
+                    </div>                   
+                </form>
+                <div class="dropdown">                    
+                    <button class="btn btn-outline-dark dropdown-toggle btn-filter" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Filter by language                   
+                    </button>
+                    <button class="btn btn-outline-dark btn-sort">Sort by name of author</button>
+                    <div class="dropdown-menu repositories-lang" aria-labelledby="dropdownMenuButton">                      
+                    </div>                    
+                </div>
+            </div>                     
+        </header>        
+        <section class="repositories">
+            <div class="container">
+                <ul class="repository__list"></ul>                
+            </div>
+        </section>
+    </div>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/popper.min.js"></script>    
+    <script src="js/bootstrap.min.js"></script>    
+    <script src="js/functions.js"></script>   
+    <script src="js/index.js"></script>
+</body>
+</html>

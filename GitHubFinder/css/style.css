@@ -1,0 +1,101 @@
+#wrapper {
+    padding-top: 2rem;
+    background-image: linear-gradient(180deg,hsla(0,0%,100%,0) 60%,#fff),linear-gradient(70deg,#dbedff 32%,#ebfff0);
+    min-height: 100vh;
+}
+
+.header__title {
+    margin: 0 0 2rem 0;
+    padding: 0;    
+    font-size: 2rem;
+    color: #24292e;
+    text-align: center;
+}
+
+.header__search {
+    display: flex;
+}
+
+.search-form {
+    width: 80%;
+    margin: 2rem auto 0 auto;
+
+}
+
+.search-input {
+    padding: .5rem;
+    font-size: .9rem;
+    height: 2.1rem;
+}
+
+.btn-search {
+    width: 3rem;
+    margin-left: 1rem;
+}
+
+.repository__list {
+    list-style-type: none;
+    box-sizing: border-box;    
+    margin-top: 2rem;
+    padding: 1.3rem;    
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.repository__title {
+    font-size: 1.1rem;
+}
+
+.repository__item {
+    border: 1px solid #2b1054;
+    border-radius: 1rem;
+    padding: 1rem;    
+    margin: 0 1.5% 2% 1.5%;
+    width: 19rem;
+    overflow: auto;
+}
+
+.repository__item a {
+    color: #3f5a98;
+    transition: .3s all;  
+}
+
+.repository__item a:hover {    
+    color: #61a3cc;    
+}
+
+.repository__avatar {
+    width: 10rem;
+    height: 10rem;
+    margin: 1rem auto 1rem auto;
+    border-radius: 50%;
+}
+
+.repository__avatar img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+
+.error {    
+    font-size: 1.5rem;
+    color: #da0000;   
+}
+
+.dropdown {
+    display: none;
+}
+
+.dropdown button {
+    margin-bottom: 1rem;
+}
+
+.active {
+    display: block;
+}
+
+.hide {
+    display: none;
+}
