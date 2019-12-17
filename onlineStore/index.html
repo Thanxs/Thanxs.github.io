@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Task 11</title>
+    <link href="https://fonts.googleapis.com/css?family=Martel&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div id="wrapper">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4" id="categories">
+                    <h2 class="categories__title">Categories</h2>
+                    <ul class="categories__list"></ul>
+                </div>
+                <div class="col-md-4" id="products">
+                    <h2 class="products__title">Products</h2>                    
+                </div>
+                <div class="col-md-4" id="product">                    
+                </div>                
+            </div>
+            <form action="#" name="myForm">
+                <div class="form-group">
+                    <label for="controlInputName">Input your full name</label>
+                    <input type="text" class="form-control" id="controlInputName">
+                    <label for="controlSelectCity">Select you city</label>
+                    <select class="form-control" id="controlSelectCity">
+                        <option disabled selected></option>
+                        <option>Odessa</option>
+                        <option>Kyiv</option>
+                        <option>Lviv</option>
+                        <option>Kharkiv</option>
+                    </select>
+                    <label for="controlInputDepartment">Input "Nova Poshta" department</label>
+                    <input type="text" class="form-control" id="controlInputDepartment">
+                    <label for="controlSelectPayment">Select payment's method</label>
+                    <select class="form-control" id="controlSelectPayment">
+                        <option disabled selected></option>
+                        <option>cash on delivery</option>
+                        <option>by credit card</option>                        
+                    </select>
+                    <label id="labelForTextarea" for="controlComment">Write your comment</label>
+                    <textarea class="textarea" id="controlComment"></textarea>
+                    <input type="button" value="Accept" id="accept" class="btn btn-success">            
+                </div>
+            </form>            
+        </div>        
+    </div>
+    <script src="js/data.js"></script>
+    <script src="js/functions.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
+
+
+
