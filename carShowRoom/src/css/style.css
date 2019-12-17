@@ -1,5 +1,8 @@
 #wrapper {
-    padding-top: 20px; 
+    padding: 20px 0 50px 0; 
+    background-color: #272B30;
+    width: 100vw;
+    min-height: 100vh;
 }
 
 .entities {
@@ -17,6 +20,7 @@
     text-align: center;
     transform: skew(-6deg);
     transition: .8s all;
+    color: #cccccc
 }
 
 .entities div:hover {
@@ -41,6 +45,7 @@
     justify-content: space-between;
     padding: 10px 0 10px 0;
     transition: .8s all;
+    color: #cccccc
 }
 
 .entity__item:hover {
@@ -227,4 +232,16 @@
 
 .text-muted {
     text-align: center;
+}
+
+.translated {
+    transform: translateX(-5555px);
+}
+
+.tranlated_sixty {
+    transform: translateX(-60%);
+}
+
+.translated_light {
+    transform: translateX(-1555px);
 }

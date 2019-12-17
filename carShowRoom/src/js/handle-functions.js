@@ -1,7 +1,7 @@
 'use strict';
 
 function handleClickOnEntity(event) {
-    const dataEntity = event.target.dataset.entity; 
+    const dataEntity = $(event.target).attr('data-entity');    
 
     if (dataEntity === 'persons') {
         showInfoOfSelectedEntity(persons, dataEntity);
@@ -21,11 +21,10 @@ function handleClickOnEntity(event) {
 
 function handleClickOnBtnView(event) {
     refreshInfo('.info', '.info-cars', '.wrapper-info','.purchase-info', '.sale-info', '.delete-confirmation');
-
-    const selectedEntity = event.target.closest('li');    
-    const entityId = parseInt(event.target.closest('li').dataset.id);
-    const dataEntity = selectedEntity.dataset.entity; 
-
+      
+    const entityId = parseInt($(event.target.closest('li')).attr('data-id'));
+    const dataEntity = $(event.target.closest('li')).attr('data-entity');
+    
     if (dataEntity === 'cars') {       
         showDetailsOfEntity(cars, entityId, 'disabled');
     } else if (dataEntity === 'persons') {
@@ -38,15 +37,14 @@ function handleClickOnBtnView(event) {
 function handleClickOnBtnEdit(event) {
     refreshInfo('.info', '.info-cars', '.wrapper-info', '.purchase-info', '.sale-info', '.delete-confirmation');  
 
-    const selectedEntity = event.target.closest('li');    
-    const entityId = parseInt(event.target.closest('li').dataset.id);
-    const dataEntity = selectedEntity.dataset.entity;
+    const entityId = parseInt($(event.target.closest('li')).attr('data-id'));
+    const dataEntity = $(event.target.closest('li')).attr('data-entity');
     
     if (dataEntity === 'cars') {       
         showDetailsOfEntity(cars, entityId, '');
-    } else if (selectedEntity.dataset.entity === 'persons') {
+    } else if (dataEntity === 'persons') {
         showDetailsOfEntity(persons, entityId, '');
-        createButtonsToMakeDealsWithCars(entityId, selectedEntity.dataset.entity); 
+        createButtonsToMakeDealsWithCars(entityId, dataEntity); 
     } else if (dataEntity === 'companies') {
         showDetailsOfEntity(companies, entityId, '');    
         createButtonsToMakeDealsWithCars(entityId, dataEntity); 
@@ -56,18 +54,15 @@ function handleClickOnBtnEdit(event) {
     setEventListenerOnBtn(entityId);
 }
 
-function handleClickOnBtnConfirm(event) {
-    const selectedEntity = event.target;
-    const indexOfSelectedEntity = parseInt(event.target.dataset.id);
-    const dataEntity = selectedEntity.dataset.entity;
+function handleClickOnBtnConfirm(event) {    
+    const indexOfSelectedEntity = parseInt($(event.target).attr('data-id'));
+    const dataEntity = $(event.target).attr('data-entity');
 
     const indexOfPersons = getIndexOfSelectedEntity(persons, indexOfSelectedEntity);    
     const indexOfCompanies = getIndexOfSelectedEntity(companies, indexOfSelectedEntity);
     const indexOfCars = getIndexOfSelectedEntity(cars, indexOfSelectedEntity);
-
-    const formInsideEntityInformation = document.forms.formInsideEntityInformation;
     
-    let editedValues = getArrayOfValuesInsideForm(formInsideEntityInformation);
+    let editedValues = getArrayOfValuesInsideForm($('entity-form'));
 
     if (dataEntity === 'cars') {
 
@@ -128,13 +123,11 @@ function handleClickOnBtnConfirm(event) {
 function handleClickOnBtnRemove(event) {
     refreshInfo('.info', '.info-cars', '.wrapper-info', '.purchase-info', '.sale-info', '.delete-confirmation');
     
-    const entityId = parseInt(event.target.closest('li').dataset.id);
-    const dataEntity = event.target.closest('li').dataset.entity;    
-
-    const container = document.querySelector('.container');
+    const entityId = parseInt($(event.target).closest('li').attr('data-id'));
+    const dataEntity = $(event.target).closest('li').attr('data-entity');
 
     const deleteConfirmation = document.createElement('div');
-    deleteConfirmation.classList.add('delete-confirmation');
+    $(deleteConfirmation).addClass('delete-confirmation');
 
     let entityString;
 
@@ -146,31 +139,24 @@ function handleClickOnBtnRemove(event) {
         entityString = 'car';
     }
     
-    deleteConfirmation.innerHTML = `<div>
-                                        <p>Are you sure to delete this ${entityString}?<p>
-                                        <button type="button" id="yes" class="btn btn-success">Yes</button>
-                                        <button type="button" id="cancel" class="btn btn-danger">Cancel</button>
-                                    </div>`;
+    $(deleteConfirmation).html(`<div>
+                                    <p>Are you sure to delete this ${entityString}?<p>
+                                    <button type="button" id="yes" class="btn btn-success">Yes</button>
+                                    <button type="button" id="cancel" class="btn btn-danger">Cancel</button>
+                                </div>`)
+    .appendTo('.container');
+   
+    $('#yes').attr('data-id', entityId).attr('data-entity', dataEntity)
+    .click(handleClickOnBtnConfirmToRemove);
 
-    container.append(deleteConfirmation);
-
-    const btnDeleteConfirmation = document.getElementById('yes');
-
-    btnDeleteConfirmation.setAttribute('data-id', entityId);
-    btnDeleteConfirmation.setAttribute('data-entity', dataEntity); 
-
-    btnDeleteConfirmation.addEventListener('click', handleClickOnBtnConfirmToRemove);
-
-    const btnDeleteCancel = document.getElementById('cancel');
-
-    btnDeleteCancel.addEventListener('click', handleClickOnBtnCancelToRemove);
+    $('#cancel').click(handleClickOnBtnCancelToRemove);
 }
 
 function handleClickOnBtnConfirmToRemove(event) {
-    const entityId = parseInt(event.target.dataset.id);
-    const dataEntity = event.target.dataset.entity;
+    const entityId = parseInt($(event.target).attr('data-id'));
+    const dataEntity = $(event.target).attr('data-entity');
 
-    const entityWhoCanBeDeleted = document.querySelector(`li[data-id="${entityId}"][data-entity="${dataEntity}"]`);
+    const entityWhoCanBeDeleted = $(`li[data-id="${entityId}"][data-entity="${dataEntity}"]`);
 
     if (dataEntity === 'cars') {
         removeEntity(cars, entityWhoCanBeDeleted, entityId);
@@ -188,13 +174,13 @@ function handleClickOnBtnConfirmToRemove(event) {
 }
 
 function handleClickOnBtnCancelToRemove(event) {
-    event.target.closest('.delete-confirmation').remove();
+    $(event.target).closest('.delete-confirmation').remove();
 }
 
 function handleClickOnBtnAdd(event) {
     refreshInfo('.info', '.info-cars', '.wrapper-info', '.purchase-info', '.sale-info', '.delete-confirmation');
 
-    const dataEntity = event.target.dataset.entity;
+    const dataEntity = $(event.target).attr('data-entity');
 
     let entityProperties;
 
@@ -205,38 +191,30 @@ function handleClickOnBtnAdd(event) {
     } else if (dataEntity === 'companies') {
         entityProperties = ['name', 'address'];
     }
-    
-    const container = document.querySelector('.container');
 
-    const entityInformation = document.createElement('div');
-
-    entityInformation.classList.add('info');
-
-    container.append(entityInformation);
+    $(document.createElement('div'))
+    .addClass('info').appendTo('.container');
 
     const formInsideEntityInformation = document.createElement('form');
-
-    formInsideEntityInformation.setAttribute('name', 'formInsideEntityInformation');
-
-    formInsideEntityInformation.classList.add('entity-form');
-
-    entityInformation.append(formInsideEntityInformation);
+    $(formInsideEntityInformation).attr('name', 'formInsideEntityInformation')
+    .addClass('entity-form')
+    .appendTo('.info');
     
     for (let i = 0; i < entityProperties.length; i++) {
         if (entityProperties[i] === 'id' || entityProperties[i] === 'car' || entityProperties[i] === 'balance') {
             continue;
         }
 
-        formInsideEntityInformation.innerHTML += `<div class="form-group">
+        $(formInsideEntityInformation).append(`<div class="form-group">
                                                     <input type="text" class="form-control" id="inputNumber${i+1}" placeholder="Please, input ${entityProperties[i]}" value="">
-                                                  </div>`;
+                                                  </div>`);
     }
 
     createBtnConfirmAddingNewEntity(dataEntity);      
  }
 
  function handleClickOnBtnConfirmAdding(event) {  
-    const dataEntity = event.target.dataset.entity;
+    const dataEntity = $(event.target).attr('data-entity');
     
     let idOfNewCar = generateIdOfNewEntity(cars);
     let idOfNewPerson = generateIdOfNewEntity(persons);
@@ -252,7 +230,7 @@ function handleClickOnBtnAdd(event) {
 
     if (idOfNewCompany === -Infinity) {
         idOfNewCompany = 1;
-    }    
+    }
 
     const formInsideEntityInformation = document.forms.formInsideEntityInformation;
     const inputCollection = formInsideEntityInformation.elements;
@@ -273,7 +251,7 @@ function handleClickOnBtnAdd(event) {
         refreshInfo('.confirm-adding', '.error');
     
         for (let i = 0; i < inputCollection.length; i++) {
-            inputCollection[i].setAttribute('disabled', true);
+            $(inputCollection[i]).attr('disabled', true);
         }
     
         createNotificationAboutDepositMoney();
@@ -294,7 +272,7 @@ function handleClickOnBtnAdd(event) {
         refreshInfo('.confirm-adding', '.error');
 
         for (let i = 0; i < inputCollection.length; i++) {
-            inputCollection[i].setAttribute('disabled', true);
+            $(inputCollection[i]).attr('disabled', true);
         }
 
         createNotificationAboutDepositMoney();
@@ -322,13 +300,11 @@ function handleClickOnBtnAdd(event) {
 function handleClickOnBtnRequestDeposit(event) {
     refreshInfo('#deposit-form', '.btn-make-deposit', '.deposit-notification');
 
-    const dataEntity = event.target.dataset.entity;
-
-    const btnRequestDepositMoney = document.querySelector('.btn-deposit');
+    const dataEntity = $(event.target).attr('data-entity');
 
     const depositForm = document.createElement('div');
 
-    depositForm.innerHTML = `<form id='deposit-form'>
+    $(depositForm).append(`<form id='deposit-form'>
                                 <div class="form-group">
                                     <input type="text" class="form-control" id="credit-card" placeholder="Enter credit card number">
                                     <small class="form-text text-muted">We'll never share your credit card number with anyone else.</small>
@@ -337,19 +313,19 @@ function handleClickOnBtnRequestDeposit(event) {
                                     <input type="text" class="form-control" id="deposit-amount" placeholder="Enter amount of deposit">                                
                                 </div>
                             </form>
-                            <button type="button" class="btn btn-success btn-make-deposit" data-entity="${dataEntity}">make a deposit</button>`;
+                            <button type="button" class="btn btn-success btn-make-deposit" data-entity="${dataEntity}">make a deposit</button>`);
                             
-    btnRequestDepositMoney.after(depositForm);
+    $('.btn-deposit').after(depositForm);
 
     setEventListenerOnBtn();
 }
 
 function handleClickOnBtnMakeDeposit(event) {
-    const dataEntity = event.target.dataset.entity; 
+    const dataEntity = $(event.target).attr('data-entity'); 
 
-    const depositForm = document.getElementById('deposit-form');
+    const depositForm = $('#deposit-form');    
 
-    const moneyValues = getArrayOfValuesInsideForm(depositForm);
+    const moneyValues = getArrayOfValuesInsideForm(depositForm[0]);
 
     const isValidatedDepositInfo = validateFormOfDeposit(moneyValues);
 
@@ -369,23 +345,23 @@ function handleClickOnBtnMakeDeposit(event) {
 }
 
 function handleClickOnBtnBuy(event) {
-    const dataEntityId = event.target.dataset.id;
-    const dataEntity = event.target.dataset.entity;
+    const dataEntityId = $(event.target).attr('data-id');
+    const dataEntity = $(event.target).attr('data-entity');
     
     createInfoAboutCars(dataEntityId, dataEntity, createListOfCarsToBuy);
 }
 
 function handleClickOnBtnBuyConfirm(event) {
-    const dataOwnerId = parseInt(event.target.getAttribute('data-entity-id'));
-    const dataEntity = event.target.dataset.entity;
+    const dataOwnerId = parseInt($(event.target).attr('data-entity-id'));
+    const dataEntity = $(event.target).attr('data-entity');
 
     showInfoToMakeDeal(dataOwnerId, dataEntity, createInfoAboutSelectedCarToBuy);
 }
 
 function handleClickOnBtnBuyAcceptPurchase(event) {   
-    const dataOwnerId = parseInt(event.target.getAttribute('data-owner-id'));
-    const dataCarId = parseInt(event.target.getAttribute('data-car-id'));
-    const dataEntity = event.target.dataset.entity;
+    const dataOwnerId = parseInt($(event.target).attr('data-owner-id'));
+    const dataCarId = parseInt($(event.target).attr('data-car-id'));
+    const dataEntity = $(event.target).attr('data-entity');
 
     const selectedCarIndex = getIndexOfSelectedEntity(cars, dataCarId);
     const selectedPersonIndex = getIndexOfSelectedEntity(persons, dataOwnerId);
@@ -413,7 +389,7 @@ function handleClickOnBtnBuyAcceptPurchase(event) {
 
     refreshInfo('.purchase-congratulation', '.purchase-failure');
 
-    const purchaseInformation = document.querySelector('.purchase-info');
+    const purchaseInformation = $('.purchase-info');
 
     if (isCheckedAavailableCash) {
         ownerWhoGonnaBuyCar.balance = balanceAfterBuyingCar;
@@ -423,12 +399,12 @@ function handleClickOnBtnBuyAcceptPurchase(event) {
 
         const purchaseCongratulation = createNotificationWhenDealMade(ownerWhoGonnaBuyCar.name, cars[selectedCarIndex].name, event.target, 'purchase-congratulation', handleClickOnBtnBuyAcceptPurchase);
 
-        purchaseInformation.append(purchaseCongratulation);
+        $(purchaseInformation).append(purchaseCongratulation);
         
         localStorage.setItem('persons', JSON.stringify(persons));
         localStorage.setItem('companies', JSON.stringify(companies));
 
-        dealInfoDisappearance(purchaseInformation, '.purchase-info', 4000, 4500);      
+        dealInfoDisappearance(purchaseInformation, '.purchase-info', 13000, 15500);      
     } else {
         playSound('bad-luck');
         createNotificationAboutPurchaseFailure(ownerWhoGonnaBuyCar.name, ownerWhoGonnaBuyCar.balance, event.target);
@@ -436,9 +412,9 @@ function handleClickOnBtnBuyAcceptPurchase(event) {
 }
 
 function handleClickOnBtnSaleAccept(event) {   
-    const dataOwnerId = parseInt(event.target.getAttribute('data-owner-id'));
-    const dataCarId = parseInt(event.target.getAttribute('data-car-id'));
-    const dataEntity = event.target.dataset.entity;
+    const dataOwnerId = parseInt($(event.target).attr('data-owner-id'));
+    const dataCarId = parseInt($(event.target).attr('data-car-id'));
+    const dataEntity = $(event.target).attr('data-entity');
     
     const selectedPersonIndex = getIndexOfSelectedEntity(persons, dataOwnerId);
     const selectedCompanyIndex = getIndexOfSelectedEntity(companies, dataOwnerId);
@@ -463,11 +439,11 @@ function handleClickOnBtnSaleAccept(event) {
 
     refreshInfo('.sale-congratulation');
 
-    const saleInformation = document.querySelector('.sale-info');
+    const saleInformation = $('.sale-info');
 
     const saleCongratulation = createNotificationWhenDealMade(ownerWhoGonnaSellCar.name, ownerWhoGonnaSellCar.cars[selectedCarIndex].name, event.target, 'sale-congratulation', handleClickOnBtnSaleAccept);
 
-    saleInformation.append(saleCongratulation);
+    $(saleInformation).append(saleCongratulation);
     
     ownerWhoGonnaSellCar.balance = balanceAfterCarSold;
     ownerWhoGonnaSellCar.cars.splice(selectedCarIndex, 1);
@@ -481,25 +457,23 @@ function handleClickOnBtnSaleAccept(event) {
 }
 
 function handleClickOnBtnSale(event) {
-    const dataEntityId = event.target.dataset.id;
-    const dataEntity = event.target.dataset.entity;
+    const dataEntityId = $(event.target).attr('data-id');
+    const dataEntity = $(event.target).attr('data-entity');
     
     createInfoAboutCars(dataEntityId, dataEntity, createListOfCarsToSell);   
 }
 
 function handleClickOnBtnSaleConfirm(event) {
-    const dataOwnerId = parseInt(event.target.getAttribute('data-entity-id'));
-    const dataEntity = event.target.dataset.entity;
+    const dataOwnerId = parseInt($(event.target).attr('data-entity-id'));
+    const dataEntity = $(event.target).attr('data-entity');
 
     showInfoToMakeDeal(dataOwnerId, dataEntity, createInfoAboutSelectedCarToSell); 
 }
 
 function handleClickOnBtnDealCancel() {
     playSound('engine-sound-2');
-
-    const wrapperForInformations = document.querySelector('.wrapper-info');
-
-    wrapperForInformations.style.transform = 'translateX(-5555px)';
+    
+    $('.wrapper-info').addClass('translated');
 
     setTimeout(refreshInfo, 500, '.wrapper-info');
 }
@@ -512,14 +486,10 @@ function handleClickOnBtnSaleDecline() {
     declineDeal('.sale-info');
 }
 
-function handleClickOnCarOption(event) {
-    const carOptions = document.querySelectorAll('.car-option');
-
+function handleClickOnCarOption(event) {    
     playSound('select-car-2');
 
-    carOptions.forEach((car) => {
-        car.removeAttribute('selected');
-    });
+    $('.car-option').removeAttr('selected');
 
-    event.target.setAttribute('selected', 'selected');  
+    $(event.target).attr('selected', 'selected');    
 }

@@ -6,3 +6,5 @@ function Car(name = 'Model unknown', year = 'Year of issue unknown', color = 'Co
     this.color = color;
     this.price = price;
 }
+
+Person.prototype = new Owner();
