@@ -17,21 +17,24 @@
         p
             margin: 0
 
-    &__cv-download
+    &__download-cv
+        display: block
         background-color: $darkColor
         color: $lightColor
         text-shadow: 1px 1px 1px $lightColor
-        min-height: 4rem
-        border: none
+        width: 12rem
+        min-height: 3rem
+        border: 1px solid $lightColor
         font-size: 1.3rem
         padding: .6rem
         margin-top: 3rem
         margin-left: 3rem
         border-radius: 20%
-        transition: .4s all
+        transition: .4s all           
         &:hover
             background-color: $lightColor
             color: $darkColor
+            text-decoration: none            
             text-shadow: 1px 1px 1px $darkColor
 
 // .carousel
