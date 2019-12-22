@@ -1,17 +1,21 @@
 .header
-    overflow: hidden    
+    overflow: hidden  
     &__left              
-        background: url('../images/bg/main_photo.jpg') (center / cover) no-repeat     
-
+        background: url('../images/bg/main_photo.jpg') (center / cover) no-repeat
+        width: 50%
     &__right
         min-height: 100vh
+        width: 50%
         background-color: $darkColor
+
+    &__avatar
+        display: none
 
     &__name
         margin: 1.2rem 0 0 0
         padding-left: 4rem
         color: $lightColor
-        font-weight: 300                
+        font-weight: 300              
         cursor: pointer
         transition: .3s all
         &:hover
@@ -22,7 +26,7 @@
         justify-content: space-between
         margin: 0
         padding: 2rem 4rem
-        list-style-type: none    
+        list-style-type: none
 
     &__item
         position: relative
@@ -47,7 +51,10 @@
             transform: translateX(-50%)
         &:hover:after,
         &:focus:after 
-            width: 100% 
+            width: 100%
+        &:nth-child(1)
+            display: none
+            
 
     &__link
         color: #ffffff
@@ -65,10 +72,13 @@
             font-size: 2rem
 
         &__name
-            color: #fff
+            color: #ffffff
             font-size: 3.7rem
 
         &__info            
             font-size: 1.05rem
-            color: #fff
+            color: #ffffff
             padding-right: 4.8rem
+    
+    .hamburder
+        display: none

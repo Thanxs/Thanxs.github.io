@@ -1,0 +1,44 @@
+[
+    {
+        "name": "uber",
+        "description": "In this work, I practiced layout skills, working with the bootstrap library",
+        "webSiteLink": "https://thanxs.github.io/uber/src/",
+        "gitHubLink": "https://github.com/Thanxs/thanxs.github.io/tree/master/uber"        
+    },
+    {
+        "name": "run_smart",
+        "description": "In this work, I practiced layout skills, css animations, google maps etc.",
+        "webSiteLink": "https://thanxs.github.io/runSmart/src/",
+        "gitHubLink": "https://github.com/Thanxs/thanxs.github.io/tree/master/runSmart"        
+    },
+    {
+        "name": "online_store",
+        "description": "In this work, I practiced workink with DOM APi",
+        "webSiteLink": "https://thanxs.github.io/onlineStore/",
+        "gitHubLink": "https://github.com/Thanxs/thanxs.github.io/tree/master/onlineStore"        
+    },
+    {
+        "name": "moment",
+        "description": "In this work, I used some popular libraries, such as bootstrap, popper.js, jquery, moment.js",
+        "webSiteLink": "https://thanxs.github.io/moment",
+        "gitHubLink": "https://github.com/Thanxs/thanxs.github.io/tree/master/moment"        
+    },
+    {
+        "name": "car_showroom",
+        "description": "In this project, I used some popular libraries, such as bootstrap, popper.js, jquery, moment.js, practiced with DOM, Regular Expressions etc.",
+        "webSiteLink": "https://thanxs.github.io/carShowRoom/src/",
+        "gitHubLink": "https://github.com/Thanxs/thanxs.github.io/tree/master/carShowRoom"        
+    },
+    {
+        "name": "clock",
+        "description": "In this project, I worked with Event Loop and DOM",
+        "webSiteLink": "https://thanxs.github.io/clock/",
+        "gitHubLink": "https://github.com/Thanxs/thanxs.github.io/tree/master/clock"        
+    },
+    {
+        "name": "todo-list",
+        "description": "In this project, I used some popular libraries, such as bootstrap, popper.js, jquery and worked with promises and localstorage",
+        "webSiteLink": "https://thanxs.github.io/todoList/",
+        "gitHubLink": "https://github.com/Thanxs/thanxs.github.io/tree/master/todoList"        
+    }    
+]

@@ -12,30 +12,32 @@
         width: 100%
         list-style-type: none
         padding: 0
-        margin: 3.3rem 0 0 0
+        margin: 3.3rem 0 5rem 0
         display: flex
         flex-wrap: wrap
-        justify-content: space-between
+        justify-content: center
         transform: skewY(3deg) translateY(100px)
-    &__item        
-        width: 48%
+    &__item
+        width: 26rem
         height: 19rem
-        margin-top: 3rem
+        margin: 1.5rem 1rem
         border: 2px solid#e2e2e2
         border-radius: 1rem
         box-sizing: border-box
-        overflow: hidden        
+        overflow: hidden 
 
     &__image           
         width: 100%
         height: 100%
-        transition: .3s all
+        transition: .6s all
         cursor: pointer
         display: flex
         justify-content: center 
+        transform: scale(1.3)
                         
         &:hover           
             position: relative
+            transform: scale(1)
             &:after
                 display: block
                 content: ''
@@ -50,15 +52,23 @@
 
     .uber
         background: url('../images/projects/uber.jpg') (center / cover) no-repeat
-    .run-smart
+    .run_smart
         background: url('../images/projects/runSmart.jpg') (center / cover) no-repeat
     .moment
         background: url('../images/projects/moment.jpg') (center / cover) no-repeat
+    .online_store
+        background: url('../images/projects/online_store.jpg') (center / cover) no-repeat
+    .car_showroom
+        background: url('../images/projects/car_showroom.jpg') (center / cover) no-repeat
+    .clock
+        background: url('../images/projects/clock.jpg') (center / cover) no-repeat
+    .todo-list
+        background: url('../images/projects/todo-list.jpg') (center / cover) no-repeat
 
     .description
         width: 80%
         margin: 0 auto
-        margin-top: 5rem
+        margin-top: 4rem
         font-size: 1.2rem
         text-align: center
         z-index: 2
@@ -75,9 +85,9 @@
         
 
     .view-site, .view-git        
-        height: 3rem        
+        height: 2.5rem        
         margin: .4rem
-        font-size: 1.2rem
+        font-size: 1rem
         transition: .6s all
         
         &:hover
