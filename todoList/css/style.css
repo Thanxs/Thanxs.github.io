@@ -1,0 +1,131 @@
+#wrapper {
+    background-image: linear-gradient(to bottom, #a9a9a9, #bdbebf, #cfd4d4, #e4eae7, #fdfff9);
+    min-height: 100vh;
+    padding-top: 4rem;
+}
+
+.todo__app {
+    margin: 0 auto;
+    padding: 1rem .5rem 0 .5rem;
+    max-width: 19rem;
+    min-height: 27rem;
+    /* border: 1px solid #000000;
+    border-radius: 10px; */
+    box-sizing: border-box;   
+}
+
+.todo__top-panel {
+    margin: 1rem auto;
+}
+
+.todo__title {
+    text-align: center;
+    font-size: 2.2rem;
+    color: #252525;
+}
+
+.todo__btn-status {
+    font-size: 1rem;
+}
+
+.todo__list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.todo__item {
+    justify-content: space-between;    
+    cursor: pointer;    
+    border-radius: 1rem;
+    padding: .4rem;
+    transition: .3s background-color;
+    font-size: .9rem;
+    color: #6c757d;
+}
+
+.todo__item:hover {
+    background-color: #f0f0f0;
+}
+
+.todo__item-name {
+    width: 70%;
+    overflow: auto;
+}
+
+.btn-block {
+    width: 30%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.btn-block i {
+    min-width: 1.3rem;
+    max-height: 1rem;
+}
+
+.todo__add {
+    margin: 0 auto .5rem auto;   
+}
+
+
+.btn-add {
+    height: 100%;    
+}
+
+.hide {
+    display: none;
+}
+
+.priority, .status {
+    padding-left: 1rem;
+}
+
+.priority {
+    margin-bottom: 1rem;
+}
+
+.priority__title, .status__title {
+    font-size: 1.1rem;
+    margin-bottom: .5rem;  
+}
+
+.todo-level-important, .todo-status {   
+    display: flex;    
+}
+
+.todo-level-important button, .todo-status button {
+    margin-right: .1rem;
+    margin-bottom: .5rem;
+    font-size: 0.9rem;
+    padding: .2rem .2rem .2rem .2rem;
+}
+
+.priority__choice, .status__choice {   
+    font-size: .8rem;
+    margin-left: .1rem;
+}
+
+.low {
+    color: #6c757d;
+    font-weight: 300;
+}
+
+.minor {
+    color: #17a2b8;    
+}
+
+.major {
+    color: #28a745;
+    font-weight: 500;
+}
+
+.high {
+    color: #dc3545;
+    font-weight: 700;
+}
+
+.btn-status-show {
+    font-size: 0.9rem;
+}

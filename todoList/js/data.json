@@ -1,0 +1,20 @@
+[
+    {
+        "name": "Run 5 kms in the morning",
+        "priority": "minor",
+        "status": "Open",
+        "id": 1
+    },
+    {
+        "name": "Learn Angular 8",
+        "priority": "major",
+        "status": "Open",
+        "id": 2
+    },
+    {
+        "name": "Do Hillel homework",
+        "priority": "major",
+        "status": "Open",
+        "id": 3
+    }
+]
