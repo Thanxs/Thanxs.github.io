@@ -27,3 +27,4 @@ activateHamburger();
       return false;
   });
 
+  showContacts();

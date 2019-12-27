@@ -1,12 +1,18 @@
-.header
+.header    
     overflow: hidden  
     &__left              
         background: url('../images/bg/main_photo.jpg') (center / cover) no-repeat
         width: 50%
+        transition: .5s all
+        &-darken
+            background: darken($darkColor, 5%) 
     &__right
         min-height: 100vh
         width: 50%
         background-color: $darkColor
+        transition: .5s all
+        &-darken
+            background: darken($darkColor, 5%)     
 
     &__avatar
         display: none
@@ -79,6 +85,11 @@
             font-size: 1.05rem
             color: #ffffff
             padding-right: 4.8rem
+
+    &__description-hidden
+        display: none
     
     .hamburder
         display: none
+
+    
